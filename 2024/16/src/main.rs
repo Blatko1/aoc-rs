@@ -2,10 +2,10 @@ use std::{collections::HashMap, u32, usize};
 
 fn main() {
     let input = include_str!("../input.txt");
-    println!("Part 1 result: {}", part1(input));
+    //println!("Part 1 result: {}", part1(input));
     //println!("Part 2 result: {}", part2(input));
 }
-
+/*
 fn part1(input: &str) -> u32 {
     let map: Vec<Vec<char>> =
         input.lines().map(|row| row.chars().collect()).collect();
@@ -96,7 +96,7 @@ fn part1(input: &str) -> u32 {
     //let lowest_points_path = DfsBestPath::new(map_width, map_height).search(map);
 
     todo!()
-}
+}*/
 
 /*struct DfsBestPath {
     map_width: usize,

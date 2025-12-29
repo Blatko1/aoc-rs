@@ -40,7 +40,7 @@ fn part1(input: &str) -> usize {
         .map(|(y, row)| {
             row.iter()
                 .enumerate()
-                .filter(|(_, &c)| c == 'O')
+                .filter(|(_, c)| **c == 'O')
                 .map(|(x, _)| 100 * y + x)
                 .sum::<usize>()
         })
@@ -282,7 +282,7 @@ fn part2(input: &str) -> usize {
         .map(|(y, row)| {
             row.iter()
                 .enumerate()
-                .filter(|(_, &c)| c == '[')
+                .filter(|(_, c)| **c == '[')
                 .map(|(x, _)| 100 * y + x)
                 .sum::<usize>()
         })

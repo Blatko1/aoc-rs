@@ -10,7 +10,15 @@ fn main() {
 }
 
 fn part1(input: &str) -> u32 {
-    let bytes: Vec<(usize, usize)> = input.lines().map(|row| {let mut split = row.split(','); let left = split.next().unwrap().parse().unwrap(); let right = split.next().unwrap().parse().unwrap(); (left, right)}).collect();
+    let bytes: Vec<(usize, usize)> = input
+        .lines()
+        .map(|row| {
+            let mut split = row.split(',');
+            let left = split.next().unwrap().parse().unwrap();
+            let right = split.next().unwrap().parse().unwrap();
+            (left, right)
+        })
+        .collect();
 
     let mut map = vec![vec!['.'; WIDTH]; HEIGHT];
     for &(x, y) in bytes.iter().take(1024) {
@@ -28,34 +36,30 @@ fn part1(input: &str) -> u32 {
 
         // Check UP
         if y >= 1 {
-            if map[y-1][x] != '#' {
-map[y-1][x] = '#';
-            adjacents.push_back((x, y-1, acc_steps+1));
-            
+            if map[y - 1][x] != '#' {
+                map[y - 1][x] = '#';
+                adjacents.push_back((x, y - 1, acc_steps + 1));
             }
         }
         // Check DOWN
         if y + 1 < HEIGHT {
-            if map[y+1][x] != '#' {
-                map[y+1][x] = '#';
-            adjacents.push_back((x, y+1, acc_steps+1));
-            
+            if map[y + 1][x] != '#' {
+                map[y + 1][x] = '#';
+                adjacents.push_back((x, y + 1, acc_steps + 1));
             }
         }
         // Check LEFT
         if x >= 1 {
-            if map[y][x-1] != '#' {
-                map[y][x-1] = '#';
-            adjacents.push_back((x-1, y, acc_steps+1));
-            
+            if map[y][x - 1] != '#' {
+                map[y][x - 1] = '#';
+                adjacents.push_back((x - 1, y, acc_steps + 1));
             }
         }
         // Check RIGHT
         if x + 1 < WIDTH {
-            if map[y][x+1] != '#' {
-                map[y][x+1] = '#';
-            adjacents.push_back((x+1, y, acc_steps+1));
-            
+            if map[y][x + 1] != '#' {
+                map[y][x + 1] = '#';
+                adjacents.push_back((x + 1, y, acc_steps + 1));
             }
         }
     }

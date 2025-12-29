@@ -1,14 +1,16 @@
 [workspace]
 members = [
     "2023/*",
-    "2024/*"
+    "2024/*",
+    "2025/*"
 ]
-resolver = "2"
+resolver = "3"
 
 [workspace.package]
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [workspace.dependencies]
-criterion = "0.5.1"
-regex = "1.11.1"
+criterion = "0.8.1"
+regex = "1.12.1"
+nalgebra = "0.34.1"

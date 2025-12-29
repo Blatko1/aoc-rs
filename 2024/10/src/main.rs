@@ -11,7 +11,7 @@ fn part1(input: &str) -> usize {
     let trailhead_iter = map.iter().enumerate().flat_map(|(y, row)| {
         row.iter()
             .enumerate()
-            .filter(|(_, &c)| c == '0')
+            .filter(|(_, c)| **c == '0')
             .map(move |(x, _)| (x, y))
     });
 
@@ -101,7 +101,7 @@ fn part2(input: &str) -> i32 {
     let trailhead_iter = map.iter().enumerate().flat_map(|(y, row)| {
         row.iter()
             .enumerate()
-            .filter(|(_, &c)| c == '0')
+            .filter(|(_, c)| **c == '0')
             .map(move |(x, _)| (x, y))
     });
 

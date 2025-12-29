@@ -1,0 +1,8 @@
+[package]
+name = "aoc2025_10"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+nalgebra.workspace = true
+good_lp = "1.14.2"

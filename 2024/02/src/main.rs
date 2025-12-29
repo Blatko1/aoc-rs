@@ -11,8 +11,8 @@ fn are_levels_safe(levels: &[i32]) -> Result<(), usize> {
     let increasing = levels[0] < levels[1];
     let mut levels_iter = levels.iter().enumerate().peekable();
     while let Some((idx, current)) = levels_iter.next() {
-        if let Some((_, &next)) = levels_iter.peek() {
-            let diff = next - current;
+        if let Some((_, next)) = levels_iter.peek() {
+            let diff = *next - current;
             if (increasing && (diff <= 0 || diff > 3))
                 || (!increasing && (diff >= 0 || diff < -3))
             {

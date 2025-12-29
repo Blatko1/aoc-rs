@@ -103,7 +103,7 @@ fn part2(input: &str) -> u32 {
         .flat_map(|(y, row)| {
             row.iter()
                 .enumerate()
-                .filter(|(_, &c)| c == 'X')
+                .filter(|(_, c)| **c == 'X')
                 .map(move |(x, _)| (x, y))
         })
         .collect();
